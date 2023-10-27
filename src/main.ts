@@ -7,7 +7,7 @@ import { VueQueryPlugin } from '@tanstack/vue-query';
 import App from './App.vue';
 import { router } from './modules/router';
 import { shopifyAppBridgePlugin } from './modules/appBridge.js';
-import { initI18n } from "./utils/i18nUtils";
+import { initI18n } from "./modules/i18n";
 
 import './assets/main.css';
 import '@ownego/polaris-vue/dist/style.css';
