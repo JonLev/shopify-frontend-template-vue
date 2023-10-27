@@ -1,11 +1,16 @@
 <template>
   <AppProvider>
-    <RouterView />
+    <Suspense>
+      <RouterView />
+      <template #fallback>
+        <Loading />
+      </template>
+    </Suspense>
   </AppProvider>
 </template>
 
 <script setup>
-import { AppProvider } from "@ownego/polaris-vue";
+import { AppProvider, Loading } from "@ownego/polaris-vue";
 </script>
 
 
