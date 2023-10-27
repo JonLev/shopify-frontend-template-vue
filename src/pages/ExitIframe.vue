@@ -25,7 +25,7 @@ const route = useRoute();
 const router = useRouter();
 
 const showWarning = ref(false);
-watch(appBridge => {
+watch(appBridge, () => {
   if (!appBridge)
     return;
 
