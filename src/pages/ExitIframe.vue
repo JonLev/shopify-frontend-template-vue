@@ -22,20 +22,25 @@ const appBridge = ueAppBridge();
 const route = useRoute();
 const router = useRouter();
 
-const redirectUri = route.query.get("redirectUri");
-const url = new URL(decodeURIComponent(redirectUri));
-
 const showWarning = ref(false);
-if (
-  [location.hostname, "admin.shopify.com"].includes(url.hostname) ||
-  url.hostname.endsWith(".myshopify.com")
-) {
-  const redirect = Redirect.create(appBridge);
-  redirect.dispatch(
-    Redirect.Action.REMOTE,
-    decodeURIComponent(redirectUri)
-  );
-} else {
-  showWarning.value = true;
-}
+watch(appBridge => {
+  if (!appBridge)
+    return;
+
+  const redirectUri = route.query.redirectUri;
+  const url = new URL(decodeURIComponent(redirectUri));
+
+  if (
+    [location.hostname, "admin.shopify.com"].includes(url.hostname) ||
+    url.hostname.endsWith(".myshopify.com")
+  ) {
+    const redirect = Redirect.create(appBridge);
+    redirect.dispatch(
+      Redirect.Action.REMOTE,
+      decodeURIComponent(redirectUri)
+    );
+  } else {
+    showWarning.value = true;
+  }
+}, { immediate: true })
 </script>
