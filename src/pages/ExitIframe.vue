@@ -14,7 +14,9 @@
 </template>
 
 <script setup>
-import { Loading } from '@ownego/polaris-vue';
+import {
+  Loading, Page, Layout, LayoutSection, Banner
+} from '@ownego/polaris-vue';
 import { Redirect } from "@shopify/app-bridge/actions";
 import { ueAppBridge } from 'src/composables/useAppBridge';
 
