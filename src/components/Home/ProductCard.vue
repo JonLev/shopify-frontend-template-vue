@@ -13,7 +13,7 @@
       <Text as="h4" variant="headingMd">
         {{ t('ProductsCard.totalProductsHeading') }}
         <Text variant="bodyMd" as="p" fontWeight="semibold">
-          {{ isLoadingCount ? "-" : data.count }}
+          {{ isLoadingCount ? "-" : productCount }}
         </Text>
       </Text>
     </TextContainer>
@@ -27,7 +27,7 @@ import { useProductStore } from 'src/stores/productStore';
 
 const { t } = useTranslation();
 const { appBridge } = useAppBridge();
-const { data, isLoading, setIsLoading, isLoadingCount, addProduct, refetchProductCount, productsCount } = useProductStore();
+const { isLoading, setIsLoading, isLoadingCount, addProduct, refetchProductCount, productsCount } = useProductStore();
 
 const handleAddProduct = async () => {
   const response = await addProduct();
