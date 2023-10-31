@@ -9,10 +9,10 @@ export const useProductStore = defineStore('product', () => {
   }
 
   const {
-    data: productCount,
-    isLoading: isProductCountLoading,
-    refetch: refetchProductCount,
-    isRefetching: isProductCountRefetching,
+    data: productsCount,
+    isLoading: isProductsCountLoading,
+    refetch: refetchProductsCount,
+    isRefetching: isProductsCountRefetching,
   } = useAppQuery({
     url: '/api/products/count', queryOptions: {
       onSuccess: () => {
@@ -32,10 +32,10 @@ export const useProductStore = defineStore('product', () => {
     isLoading,
     setIsLoading,
     addProduct,
-    productCount,
-    isProductCountLoading,
-    refetchProductCount,
-    isProductCountRefetching,
+    productsCount,
+    isProductsCountLoading,
+    refetchProductsCount,
+    isProductsCountRefetching,
   }
 });
 
