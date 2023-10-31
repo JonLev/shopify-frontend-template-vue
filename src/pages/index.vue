@@ -32,9 +32,9 @@
           </Stack>
         </Card>
       </LayoutSection>
-      <!-- <LayoutSection>
-        <ProductsCard />
-      </LayoutSection> -->
+      <LayoutSection>
+        <ProductCard />
+      </LayoutSection>
     </Layout>
   </Page>
 </template>
@@ -51,6 +51,7 @@ import {
   StackItem,
   Text,
 } from '@ownego/polaris-vue';
+import ProductCard from 'src/components/Home/ProductCard.vue';
 import trophyImage from 'src/assets/home-trophy.png';
 
 const { t } = useTranslation();
