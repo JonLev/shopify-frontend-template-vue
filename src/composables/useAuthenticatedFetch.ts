@@ -21,8 +21,8 @@ export function useAuthenticatedFetch() {
 
   window.__SHOPIFY_DEV_HOST = host
   const appBridge = createApp({
-    apiKey: process.env.SHOPIFY_API_KEY,
-    host: host,
+    apiKey: process.env.SHOPIFY_API_KEY as string,
+    host: host as string,
     forceRedirect: true
   })
   const app = appBridge

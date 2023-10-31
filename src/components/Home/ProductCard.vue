@@ -3,7 +3,10 @@
     :title="t('ProductsCard.title')"
     sectioned
     :primaryFooterAction="{
-      content: t('ProductsCard.populateProductsButton', { count: productsCount?.count }),
+      content: t(
+        'ProductsCard.populateProductsButton',
+        { count: productsCount?.count },
+      ),
       onAction: handleAddProduct,
       loading: isLoading,
     }"
@@ -29,6 +32,9 @@ import { useProductStore } from 'src/stores/productStore';
 const { t } = useTranslation();
 const { appBridge } = useAppBridge();
 const { isLoading, setIsLoading, isLoadingCount, addProduct, refetchProductsCount, productsCount } = useProductStore();
+watch(productsCount, () => {
+  console.log(productsCount.value);
+})
 
 const handleAddProduct = async () => {
   const response = await addProduct();
