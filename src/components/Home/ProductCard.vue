@@ -22,6 +22,7 @@
 
 <script setup lang="ts">
 import { Toast } from '@shopify/app-bridge/actions';
+import { Card, TextContainer, Text } from '@ownego/polaris-vue';
 import { useAppBridge } from 'src/composables/useAppBridge';
 import { useProductStore } from 'src/stores/productStore';
 
