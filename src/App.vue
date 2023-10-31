@@ -19,6 +19,7 @@ const { t } = useTranslation();
 const appBridge = useAppBridge();
 const pagename = AppLink.create(appBridge, {
   label: t('NavigationMenu.pageName'),
+  destination: '/pagename',
 });
 NavigationMenu.create(appBridge, { items: [pagename] });
 </script>
