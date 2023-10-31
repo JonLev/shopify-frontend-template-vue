@@ -13,10 +13,14 @@ export const useProductStore = defineStore('product', () => {
     isLoading: isProductsCountLoading,
     refetch: refetchProductsCount,
     isRefetching: isProductsCountRefetching,
-  } = useAppQuery({ url: '/api/products/count' })
+  } = useAppQuery({
+    url: '/api/products/count', queryOptions: {
+      queryKey: ['products', 'count'],
+    },
+  })
   const authenticatedFetch = useAuthenticatedFetch();
 
-  const addProduct = async (product: any) => {
+  const addProduct = async () => {
     setIsLoading(true);
     const response = await authenticatedFetch('/api/products/create');
     return response;
