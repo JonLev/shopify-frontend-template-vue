@@ -3,7 +3,7 @@
     :title="t('ProductsCard.title')"
     sectioned
     :primaryFooterAction="{
-      content: t('ProductsCard.populateProductsButton', { count: productsCount }),
+      content: t('ProductsCard.populateProductsButton', { count: productsCount.count }),
       onAction: handleAddProduct,
       loading: isLoading,
     }"
@@ -13,7 +13,7 @@
       <Text as="h4" variant="headingMd">
         {{ t('ProductsCard.totalProductsHeading') }}
         <Text variant="bodyMd" as="p" fontWeight="semibold">
-          {{ isLoadingCount ? "-" : productsCount }}
+          {{ isLoadingCount ? "-" : productsCount.count }}
         </Text>
       </Text>
     </TextContainer>
