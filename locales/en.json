@@ -5,7 +5,8 @@
     "startPopulatingYourApp": "Ready to go? Start populating your app with some sample products to view and test in your store.",
     "title": "App name",
     "trophyAltText": "Nice work on building a Shopify app",
-    "yourAppIsReadyToExplore": "Your app is ready to explore! It contains everything you need to get started."
+    "yourAppIsReadyToExplore": "Your app is ready to explore! It contains everything you need to get started.",
+    "allSetToast": "You're all set !"
   },
   "NavigationMenu": {
     "pageName": "Page name"

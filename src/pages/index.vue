@@ -51,17 +51,9 @@ import {
   StackItem,
   Text,
 } from '@ownego/polaris-vue';
-import { Toast } from '@shopify/app-bridge/actions';
 import trophyImage from 'src/assets/home-trophy.png';
 
 const { t } = useTranslation();
-const appBridge = inject('useAppBridge');
-const toast = Toast.create(appBridge, {
-    message: 'Youpi !',
-    duration: 3000,
-    isError: false
-  })
-  toast.dispatch(Toast.Action.SHOW)
 </script>
 
 <style scoped>

@@ -16,7 +16,7 @@ function checkHeadersForReauthorization(headers: Headers, app: ClientApplication
   }
 }
 
-export function useAuthenticatedFetchVue() {
+export function useAuthenticatedFetch() {
   const host = new URLSearchParams(location.search).get('host') || window.__SHOPIFY_DEV_HOST
 
   window.__SHOPIFY_DEV_HOST = host
@@ -28,7 +28,7 @@ export function useAuthenticatedFetchVue() {
   const app = appBridge
   const fetchFunction = authenticatedFetch(app)
 
-  return async (uri: string, options: any) => {
+  return async (uri: string, options?: any) => {
     const response = await fetchFunction(uri, options)
     checkHeadersForReauthorization(response.headers, app)
     return response
