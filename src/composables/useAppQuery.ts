@@ -1,7 +1,7 @@
 import { useAuthenticatedFetch } from './useAuthenticatedFetch';
 import { useQuery } from '@tanstack/vue-query';
 
-import type { UseQueryOptions } from '@tanstack/vue-query';
+import type { UseQueryOptions, DefaultError, UseQueryReturnType, QueryKey } from '@tanstack/vue-query';
 
 /**
  * A hook for querying your custom app data.
@@ -15,7 +15,18 @@ import type { UseQueryOptions } from '@tanstack/vue-query';
  *
  * @returns Return value of useQuery.  See: https://tanstack.com/query/latest/docs/vue/guides/queries.
  */
-export const useAppQuery = ({ url, fetchOptions = {}, queryOptions = {} }: { url: string, fetchOptions?: any, queryOptions?: UseQueryOptions }) => {
+export function useAppQuery<
+  TQueryFnData,
+  TError = DefaultError,
+  TData = TQueryFnData,
+  TQueryKey extends QueryKey = QueryKey,
+
+>({ url, fetchOptions = {}, queryOptions = {} }: {
+  url: string,
+  fetchOptions?: RequestInit,
+  queryOptions?: UseQueryOptions<TQueryFnData, TError, TData, TQueryFnData, TQueryKey>
+}):
+  | UseQueryReturnType<TData, TError> {
   const authenticatedFetch = useAuthenticatedFetch();
   const fetch = async () => {
     const response = await authenticatedFetch(url, fetchOptions);

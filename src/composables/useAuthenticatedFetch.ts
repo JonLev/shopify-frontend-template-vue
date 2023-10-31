@@ -28,7 +28,7 @@ export function useAuthenticatedFetch() {
   const app = appBridge
   const fetchFunction = authenticatedFetch(app)
 
-  return async (uri: string, options?: any) => {
+  return async (uri: string, options?: RequestInit) => {
     const response = await fetchFunction(uri, options)
     checkHeadersForReauthorization(response.headers, app)
     return response

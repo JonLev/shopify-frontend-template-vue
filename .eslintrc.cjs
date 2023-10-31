@@ -2,15 +2,20 @@
 
 module.exports = {
   root: true,
-  'extends': [
+  extends: [
     'plugin:vue/vue3-essential',
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
-    '@vue/eslint-config-prettier/skip-formatting'
+    '@vue/eslint-config-prettier/skip-formatting',
+    './.eslintrc-auto-import.json',
   ],
-  parser: '@typescript-eslint/parser',
+  parser: 'vue-eslint-parser',
   plugins: ['@typescript-eslint'],
   parserOptions: {
+    parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest'
+  },
+  globals: {
+    process: true,
   }
 }

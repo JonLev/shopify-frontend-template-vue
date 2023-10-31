@@ -1,5 +1,4 @@
 import i18next from "i18next";
-import I18NextVue from "i18next-vue";
 import ShopifyFormat from "@shopify/i18next-shopify";
 import resourcesToBackend from "i18next-resources-to-backend";
 import { match } from "@formatjs/intl-localematcher";
@@ -153,7 +152,7 @@ async function initI18next() {
 }
 
 function localResourcesToBackend() {
-  return resourcesToBackend(async (locale, _namespace) => {
+  return resourcesToBackend(async (locale) => {
     return (await import(`../../locales/${locale}.json`)).default;
   });
 }

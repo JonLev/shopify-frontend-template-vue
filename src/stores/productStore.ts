@@ -13,7 +13,7 @@ export const useProductStore = defineStore('product', () => {
     isLoading: isProductsCountLoading,
     refetch: refetchProductsCount,
     isRefetching: isProductsCountRefetching,
-  } = useAppQuery({
+  } = useAppQuery<{ count: number }>({
     url: '/api/products/count', queryOptions: {
       queryKey: ['products', 'count'],
     },

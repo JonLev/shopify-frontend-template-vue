@@ -1,7 +1,6 @@
 import { defineConfig } from "vite";
 import { dirname } from "path";
 import { fileURLToPath } from "url";
-import https from "https";
 import Vue from "@vitejs/plugin-vue";
 import VueRouter from 'unplugin-vue-router/vite'
 import { VueRouterAutoImports } from 'unplugin-vue-router'
@@ -69,6 +68,10 @@ export default defineConfig({
       ],
       vueTemplate: true,
       dts: 'src/auto-imports.d.ts',
+      eslintrc: {
+        enabled: true,
+        filepath: '.eslintrc-auto-import.json',
+      }
     }),
   ],
   define: {

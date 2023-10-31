@@ -16,7 +16,7 @@
       <Text as="h4" variant="headingMd">
         {{ t('ProductsCard.totalProductsHeading') }}
         <Text variant="bodyMd" as="p" fontWeight="semibold">
-          {{ isLoadingCount ? "-" : productsCount?.count }}
+          {{ isProductsCountLoading ? "-" : productsCount?.count }}
         </Text>
       </Text>
     </TextContainer>
@@ -30,8 +30,12 @@ import { useAppBridge } from 'src/composables/useAppBridge';
 import { useProductStore } from 'src/stores/productStore';
 
 const { t } = useTranslation();
-const { appBridge } = useAppBridge();
-const { isLoading, setIsLoading, isLoadingCount, addProduct, refetchProductsCount, productsCount } = useProductStore();
+const appBridge = useAppBridge();
+const productStore = useProductStore();
+const {
+  isLoading, isProductsCountLoading, productsCount
+} = storeToRefs(productStore);
+const { setIsLoading, addProduct, refetchProductsCount } = productStore;
 watch(productsCount, () => {
   console.log(productsCount.value);
 })
