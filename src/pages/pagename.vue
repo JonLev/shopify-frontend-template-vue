@@ -19,7 +19,7 @@
           </TextContainer>
         </Card>
       </LayoutSection>
-      <Layout.Section secondary>
+      <LayoutSection secondary>
         <Card sectioned>
           <Text variant="headingMd" as="h2">
             {{ t('PageName.heading') }}
@@ -28,7 +28,7 @@
             <p>{{ t('PageName.body') }}</p>
           </TextContainer>
         </Card>
-      </Layout.Section>
+      </LayoutSection>
     </Layout>
   </Page>
 </template>
