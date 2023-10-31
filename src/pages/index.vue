@@ -18,6 +18,7 @@
                   {{ t('HomePage.yourAppIsReadyToExplore') }}
                 </p>
                 <p>{{ t("HomePage.startPopulatingYourApp") }}</p>
+
               </TextContainer>
             </StackItem>
             <StackItem>

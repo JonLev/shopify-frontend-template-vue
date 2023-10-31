@@ -15,6 +15,9 @@ module.exports = {
     parser: '@typescript-eslint/parser',
     ecmaVersion: 'latest'
   },
+  rules: {
+    'vue/multi-word-component-names': 'off',
+  },
   globals: {
     process: true,
   }
