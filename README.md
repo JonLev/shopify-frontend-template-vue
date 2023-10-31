@@ -1,6 +1,6 @@
 # Shopify VueJS Frontend App
 
-This is a Shopify app built with VueJS inspired by [Shopify React template](https://github.com/Shopify/shopify-frontend-template-react).
+This is a Shopify app built with VueJS inspired by [Shopify React template](https://github.com/Shopify/shopify-frontend-template-react) and [a vue template](https://github.com/Mini-Sylar/shopify-app-vue-template).
 It takes also tools of a modern VueJS stack inspired from [Vitesse](https://github.com/antfu/vitesse):
 - [Vue 3](https://v3.vuejs.org/) with composition API and `<script setup>`
 - [ViteJS](https://vitejs.dev/) as a build and dev server tool
